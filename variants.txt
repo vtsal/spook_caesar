@@ -1,0 +1,20 @@
+v1
+    Reference software:
+        spook128su512v1
+
+    Architecture description:
+        Implementation of Spook 128su512v1, with n=128, r=256, c=256, and tau=128. Basic iterative architecture with respect to TLS encryption and decryption, where 1 round of the TLS permutation is executed in 1 clock cycle, or 12 cycles per TLS.  However, reuse of TLS primitives (e.g., S-Box, L-Box, and round constants) results in 1 Shadow-512 permutation executing in 144 clock cycles. 
+        
+    Key setup time:
+        0
+
+    Execution time of authenticated encryption:
+        169 + Na*145 + Nm*145
+
+    Execution time of authenticated decryption:
+        169 + Na*145 + Nm*145
+
+    Non-default generic settings:
+        G_W = 32
+        G_SW = 32
+        
